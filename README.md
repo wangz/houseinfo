@@ -1,4 +1,7 @@
 # houseinfo
+
+本程序在线地址：http://www.houseinfo.online
+
 start:
 uwsgi --http :80 --chdir /root/git/ljdata/  --wsgi-file ljdata/wsgi.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191 &>> slog
 

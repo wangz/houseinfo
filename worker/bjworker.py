@@ -13,7 +13,7 @@ URLS={'ana_day': "http://bj.lianjia.com/fangjia/priceTrend/?analysis=1&duration=
      'jianwei':'http://www.bjjs.gov.cn/bjjs/fwgl/fdcjy/fwjy/index.shtml'
     }
 def add(vals):
-    conn = sqlite3.connect('/root/git/ljdata/db.sqlite3') 
+    conn = sqlite3.connect('/root/git/houseinfo/db.sqlite3') 
     curs=conn.cursor()
     query = 'INSERT INTO main_data (vtype,value,datetime,city,created_at) VALUES(?,?,?,?,?) '
     curs.execute(query,vals)
@@ -128,6 +128,7 @@ class Moofeel(object):
             #if i == 15:
 	    #	print m
 	    if i == 17:
+		print m
 		value = m.findAll('td')[2].text
 		dtstr = m.findAll('td')[0].text[0:-7]
   		dt = datetime.date(int(dtstr.split('-')[0]),int(dtstr.split('-')[1]),int(dtstr.split('-')[2]))
